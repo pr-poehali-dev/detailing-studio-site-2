@@ -27,6 +27,29 @@ const Index = () => {
     }
   ];
 
+  const gallery = [
+    {
+      image: 'https://cdn.poehali.dev/projects/cfb7aabf-6062-4f76-9025-739af95fe9a6/files/fbb59179-1791-4103-bcb3-5d14a0b79548.jpg',
+      title: 'Керамическое покрытие',
+      category: 'Экстерьер'
+    },
+    {
+      image: 'https://cdn.poehali.dev/projects/cfb7aabf-6062-4f76-9025-739af95fe9a6/files/0145719d-31c4-4811-ad19-9d17b137bdd3.jpg',
+      title: 'Защитная пленка',
+      category: 'Защита кузова'
+    },
+    {
+      image: 'https://cdn.poehali.dev/projects/cfb7aabf-6062-4f76-9025-739af95fe9a6/files/8602baa0-87fa-42bf-b313-648fb228ebd4.jpg',
+      title: 'Детейлинг салона',
+      category: 'Интерьер'
+    },
+    {
+      image: 'https://cdn.poehali.dev/projects/cfb7aabf-6062-4f76-9025-739af95fe9a6/files/d0648aef-321d-4975-8cbc-3833958abd1f.jpg',
+      title: 'Полный детейлинг',
+      category: 'Комплекс'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -37,6 +60,7 @@ const Index = () => {
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#services" className="hover:text-primary transition-colors">Услуги</a>
+            <a href="#gallery" className="hover:text-primary transition-colors">Галерея</a>
             <a href="#about" className="hover:text-primary transition-colors">О нас</a>
             <Button size="lg" className="bg-primary hover:bg-primary/90">
               Записаться
@@ -131,6 +155,53 @@ const Index = () => {
 
         <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
         <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      </section>
+
+      <section id="gallery" className="py-24 px-6 bg-background">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-4">
+              НАШИ <span className="text-primary">РАБОТЫ</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Каждый автомобиль — это произведение искусства
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {gallery.map((item, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <span className="text-xs text-primary font-bold uppercase tracking-wider">{item.category}</span>
+                    <h3 className="text-xl font-bold mt-2">{item.title}</h3>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="bg-primary rounded-full p-2">
+                    <Icon name="ZoomIn" size={20} className="text-primary-foreground" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+              Смотреть все работы
+              <Icon name="ArrowRight" size={20} className="ml-2" />
+            </Button>
+          </div>
+        </div>
       </section>
 
       <section id="about" className="py-24 px-6 bg-muted/30">
