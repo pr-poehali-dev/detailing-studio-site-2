@@ -44,7 +44,7 @@ const Index = () => {
       category: 'Интерьер'
     },
     {
-      image: 'https://cdn.poehali.dev/projects/cfb7aabf-6062-4f76-9025-739af95fe9a6/files/d0648aef-321d-4975-8cbc-3833958abd1f.jpg',
+      image: 'https://cdn.poehali.dev/projects/cfb7aabf-6062-4f76-9025-739af95fe9a6/files/cfc19000-b165-437e-a735-af86391bc75d.jpg',
       title: 'Полный детейлинг',
       category: 'Комплекс'
     }
@@ -76,7 +76,7 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://cdn.poehali.dev/projects/cfb7aabf-6062-4f76-9025-739af95fe9a6/files/d0648aef-321d-4975-8cbc-3833958abd1f.jpg')`,
+            backgroundImage: `url('https://cdn.poehali.dev/projects/cfb7aabf-6062-4f76-9025-739af95fe9a6/files/cfc19000-b165-437e-a735-af86391bc75d.jpg')`,
             transform: `translateY(${scrollY * 0.5}px) scale(${1 + scrollY * 0.0003})`,
             filter: 'brightness(0.4)'
           }}
